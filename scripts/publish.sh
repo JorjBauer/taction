@@ -124,7 +124,7 @@ fi
 
 if [ "$DRY" = "0" ]; then
     FINAL="$(gh GET "/repos/$REPO/releases/$DRAFT_ID")"
-    printf '%s' "$FINAL" | py 'import json,sys; r=json.load(sys.stdin); print(f"draft {r[\"name\"]} has {len(r[\"assets\"])} assets: {r[\"html_url\"]}")'
+    printf '%s' "$FINAL" | py 'import json,sys; r=json.load(sys.stdin); print("draft %s has %d assets: %s" % (r["name"], len(r["assets"]), r["html_url"]))'
     echo "review it on GitHub and publish it there"
 else
     echo "dry run complete"
