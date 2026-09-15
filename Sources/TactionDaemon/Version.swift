@@ -2,7 +2,7 @@ import Foundation
 
 public enum TactionVersion {
     /// Used when running unbundled (the CLI, or `swift run`). Kept in sync with the VERSION file by scripts/bundle.sh.
-    public static let fallback = "0.1.0"
+    public static let fallback = "0.1.1"
 
     /// The bundle's marketing version when running as Taction.app, else `fallback`.
     public static var current: String {
